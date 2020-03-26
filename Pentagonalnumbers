@@ -1,0 +1,25 @@
+package day7;
+
+public class Pentagonalnumbers {
+
+// main method
+	public static void main(String[] args) {
+
+		int count = 1;
+		// loop statement for printing the numbers up to certain limit
+		for (int i = 1; i <= 50; i++) {
+			System.out.printf("%-6d ", getPentagonalNumbers(i));
+			// taking count for printing no of columns
+			if (count % 10 == 0)
+				System.out.println();
+			count++;
+		}
+	}
+
+	// method for getting pentagonal numbers
+	private static Object getPentagonalNumbers(int i) {
+		// TODO Auto-generated method stub
+		return (i * (3 * i - 1)) / 2;
+	}
+
+}

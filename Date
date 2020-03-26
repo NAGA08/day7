@@ -1,0 +1,36 @@
+package day7;
+
+//importing required calendar packages
+import java.time.Instant;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
+public class Date {
+	public static void main(String[] args) {
+
+	
+		LocalDate d = LocalDate.now();
+		// default format of date
+		System.out.println("\nDefault format of LocalDate=" + d);
+		// specific format of date 
+		System.out.println(d.format(DateTimeFormatter.ofPattern(" d::MMM::uuuu")));
+		
+
+		LocalDateTime dt1 = LocalDateTime.now();
+		// default format of date and time
+		System.out.println("\nDefault format of LocalDateTime=" +dt1);
+		// specific format of date and time 
+		System.out.println(dt1.format(DateTimeFormatter.ofPattern("d::MMM::uuuu HH::mm::ss")));
+		
+		Instant timestamp = Instant.now();
+		// default format of date with local time zone
+		System.out.println("\nDefault format of Instant=" + timestamp);
+
+		
+		// Parsing instance date
+		LocalDateTime dt2 = LocalDateTime.parse("26::Mar::2019 10::10::10",DateTimeFormatter.ofPattern("d::MMM::uuuu HH::mm::ss"));
+		System.out.println("\nDefault format after parsing = " + dt2 + "\n");
+	}
+
+}
